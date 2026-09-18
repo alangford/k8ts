@@ -43,18 +43,20 @@ module "eks" {
 
   enable_cluster_creator_admin_permissions = true
   addons = {
-  coredns = {
-    most_recent = true
-  }
+    coredns = {
+      most_recent = true
+    }
 
-  kube-proxy = {
-    most_recent = true
-  }
+    kube-proxy = {
+      most_recent    = true
+      before_compute = true
+    }
 
-  vpc-cni = {
-    most_recent = true
+    vpc-cni = {
+      most_recent    = true
+      before_compute = true
+    }
   }
-}
   eks_managed_node_groups = {
     default = {
       instance_types = ["t3.medium"]
