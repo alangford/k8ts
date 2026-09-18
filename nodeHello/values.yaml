@@ -1,0 +1,10 @@
+appname: hellonode
+namespace: default
+replicas: 1
+image:
+  name: 407997996246.dkr.ecr.us-east-1.amazonaws.com/eks-test-app
+  tag: latest
+configmap:
+  name: "helmappconfigmapv1.1"
+  data:
+    CUSTOM_HEADER: "woo woo"
